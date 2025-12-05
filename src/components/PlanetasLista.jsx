@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CardItem from "./CardItem";
 
 function PlanetasLista() {
     const [data, setData] = useState(null);
@@ -38,14 +39,17 @@ function PlanetasLista() {
     }
 
     return (
-        <div>
+        <div style={{ padding: '20px' }}>
             <h1>Catálogo de Planetas</h1>
-            <p>Total de itens: {data.count}</p>
-
-            <h2>Estrutura dos dados (Raw JSON)</h2>
-            <pre style={{ backgroundColor: '#eee', padding: '15px', borderRadius: '5px' }}>
-                {JSON.stringify(data, null, 2)}
-            </pre>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+                {data.results.map((planeta) => (
+                    <CardItem
+                        key={planeta.name}
+                        data={planeta}
+                    />
+                ))}
+            </div>
         </div>
     );
 }
