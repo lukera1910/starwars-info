@@ -1,35 +1,67 @@
 import React from "react";
 
-// recebemos a prop 'data' que contém as info do planeta
 const CardItem = ({ data }) => {
     return (
-        <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100">
-            {/* cabeçalho do card (futuramente pode ser uma imagem) */}
-            <div className="bg-blue-600 h-24 flex items-center justify-center">
-                <h3 className="text-white text-xl font-bold tracking-wide">{data.name}</h3>
+        <div className="
+            group 
+            relative 
+            bg-slate-900/80 
+            backdrop-blur-sm 
+            rounded-sm 
+            overflow-hidden 
+            transition-all duration-300 
+            cursor-pointer 
+            border border-cyan-500/30
+            hover:border-cyan-400
+            hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]
+            hover:-translate-y-1
+        ">
+            
+            {/* efeito de "scanline" decorativo no topo */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+
+            {/* cabeçalho do card */}
+            {/* troquei o bg-blue-600 por um slate mais escuro e sutil */}
+            <div className="bg-slate-800/50 h-20 flex items-center justify-center border-b border-cyan-500/20">
+                <h3 className="text-cyan-400 text-xl font-mono tracking-widest font-bold drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">
+                    {data.name}
+                </h3>
             </div>
 
             <div className="p-6">
-                <div className="space-y-2 text-gray-600">
-                    <p className="flex justify-between border-b border-gray-100 pb-2">
-                        <span className="font-semibold text-gray-800">Clima:</span>
-                        <span className="capitalize">{data.climate}</span>
+                <div className="space-y-3 text-sm font-mono text-cyan-300/80">
+                    
+                    {/* item 1 */}
+                    {/* troquei border-gray-100 por border-cyan-500/20 (muito mais sutil) */}
+                    <p className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
+                        <span className="text-cyan-600 uppercase text-xs tracking-wider">Clima</span>
+                        <span className="capitalize text-cyan-100">{data.climate}</span>
                     </p>
-                    <p className="flex justify-between border-b border-gray-100 pb-2">
-                        <span className="font-semibold text-gray-800">Terreno:</span>
-                        <span className="capitalize truncate w-1/2 text-right">{data.terrain}</span>
+                    
+                    {/* item 2 */}
+                    <p className="flex justify-between items-center border-b border-cyan-500/20 pb-2">
+                        <span className="text-cyan-600 uppercase text-xs tracking-wider">Terreno</span>
+                        <span className="capitalize truncate w-1/2 text-right text-cyan-100">{data.terrain}</span>
                     </p>
-                    <p className="flex justify-between">
-                        <span className="font-semibold text-gray-800">População:</span>
-                        <span>{data.population}</span>
+                    
+                    {/* item 3 */}
+                    <p className="flex justify-between items-center pt-1">
+                        <span className="text-cyan-600 uppercase text-xs tracking-wider">População</span>
+                        <span className="text-cyan-100">{data.population}</span>
                     </p>
                 </div>
-            </div>
 
-            {/* botão fake (por enquanto) */}
-            <button className="mt-6 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
-                Ver Detalhes
-            </button>
+                {/* botão estilo "outline" / holográfico */}
+                {/* o botão sólido rouba muita atenção. o outline combina mais com terminal */}
+                <button className="
+                    mt-6 w-full py-2 px-4 rounded-sm
+                    border border-cyan-500/50 text-cyan-400 font-mono text-sm uppercase tracking-widest
+                    hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_15px_rgba(6,182,212,0.6)]
+                    transition-all duration-300
+                ">
+                    Acessar Dados
+                </button>
+            </div>
         </div>
     );
 };

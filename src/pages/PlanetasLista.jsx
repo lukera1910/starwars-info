@@ -39,12 +39,12 @@ function PlanetasLista() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 p-8">
+        <div className="min-h-screen bg-slate-950 p-8">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-2">
+                <h1 className="text-4xl font-extrabold text-center text-cyan-500 mb-2">
                     Galáxia Far, Far Away
                 </h1>
-                <p className="text-center text-gray-500 mb-10">
+                <p className="text-center text-cyan-400 mb-10">
                     Catálogo oficial de planetas recuperado dos arquivos Jedi.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
