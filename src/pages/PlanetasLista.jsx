@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CardItem from "./CardItem";
+import CardItem from "../components/CardItem";
 
 function PlanetasLista() {
     const [data, setData] = useState(null);
@@ -39,16 +39,22 @@ function PlanetasLista() {
     }
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Catálogo de Planetas</h1>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
-                {data.results.map((planeta) => (
-                    <CardItem
-                        key={planeta.name}
-                        data={planeta}
-                    />
-                ))}
+        <div className="min-h-screen bg-gray-50 p-8">
+            <div className="max-w-7xl mx-auto">
+                <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-2">
+                    Galáxia Far, Far Away
+                </h1>
+                <p className="text-center text-gray-500 mb-10">
+                    Catálogo oficial de planetas recuperado dos arquivos Jedi.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {data.results.map((planeta) => (
+                        <CardItem
+                            key={planeta.name}
+                            data={planeta}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

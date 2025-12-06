@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import PlanetasLista from './components/PlanetasLista';
+import PlanetasLista from './pages/PlanetasLista';
 
 function App() {
     return (
