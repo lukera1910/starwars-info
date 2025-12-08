@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CardItem from "../components/CardItem";
 
-function PlanetasLista() {
+const PlanetasLista = () => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -35,7 +35,7 @@ function PlanetasLista() {
     }
 
     if (error) {
-        return <h1 style={{ color: 'red' }}>Erro ao acessar a SWAPI: {error}</h1>
+        return <h1>Erro ao acessar a SWAPI: {error}</h1>
     }
 
     return (
@@ -58,6 +58,6 @@ function PlanetasLista() {
             </div>
         </div>
     );
-}
+};
 
 export default PlanetasLista;

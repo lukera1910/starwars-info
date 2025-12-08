@@ -10,7 +10,7 @@ const categorias = [
     { titulo: 'Veículos', rota: '/veiculos', icone: '🚘', desc: 'Transporte terrestre' },
 ];
 
-function Home() {
+const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-6">
             <header className="text-center mb-12 border-b-2 border-cyan-500/30 pb-6 w-full max-w-4xl">
@@ -58,6 +58,6 @@ function Home() {
             </footer>
         </div>
     );
-}
+};
 
 export default Home;
