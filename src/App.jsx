@@ -6,6 +6,7 @@ import PlanetasLista from './pages/PlanetasLista';
 import NavesPage from './pages/NavesPage';
 import PessoasPage from './pages/PessoasPage';
 import EspeciePage from './pages/EspeciePage';
+import FilmesPage from './pages/FilmesPage';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path='/naves' element={<NavesPage />} />
                     <Route path='/pessoas' element={<PessoasPage />} />
                     <Route path='/especies' element={<EspeciePage />} />
+                    <Route path='/filmes' element={<FilmesPage />} />
                 </Routes>
             </Router>
         </div>
