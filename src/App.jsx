@@ -5,6 +5,7 @@ import Home from './pages/home';
 import PlanetasLista from './pages/PlanetasLista';
 import NavesPage from './pages/NavesPage';
 import PessoasPage from './pages/PessoasPage';
+import EspeciePage from './pages/EspeciePage';
 
 function App() {
     return (
@@ -14,7 +15,8 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/planetas' element={<PlanetasLista />} />
                     <Route path='/naves' element={<NavesPage />} />
-                    <Route path='pessoas' element={<PessoasPage />} />
+                    <Route path='/pessoas' element={<PessoasPage />} />
+                    <Route path='/especies' element={<EspeciePage />} />
                 </Routes>
             </Router>
         </div>
