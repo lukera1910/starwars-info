@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import PersonagemItem from '../components/PersonagemItem';
+import Paginacao from '../components/Paginacao';
 
 const PessoasPage = () => {
     const [pessoas, setPessoas] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const [page, setPage] = useState(1);
+    const [dataInfo, setDataInfo] = useState({ next: null, previous: null, count: 0 });
+
     useEffect(() => {
         const fetchPessoas = async () => {
+            setLoading(true)
             try {
-                const response = await fetch('https://swapi.dev/api/people/');
-                const data = await response.json();
+                const res = await fetch(`https://swapi.dev/api/people/?page=${page}`);
+                const data = await res.json();
+
                 setPessoas(data.results);
+                setDataInfo({
+                    next: data.next,
+                    previous: data.previous,
+                    count: data.count
+                });
             } catch (error) {
                 console.error("Erro na comunicação com a base rebelde:", error);
             } finally {
@@ -19,7 +30,7 @@ const PessoasPage = () => {
         };
 
         fetchPessoas();
-    }, []);
+    }, [page]);
 
     return (
         <div className='min-h-screen bg-slate-950 p-6 md:p-12 font-mono'>
@@ -50,11 +61,22 @@ const PessoasPage = () => {
                     <p className='text-cyan-600 animate-pulse'>Descriptografando dados...</p>
                 </div>
             ) : (
-                <ul className='max-w-4xl mx-auto'>
-                    {pessoas.map((pessoa) => (
-                        <PersonagemItem key={pessoa.name} data={pessoa} />
-                    ))}
-                </ul>
+                <>
+                    <ul className='max-w-4xl mx-auto'>
+                        {pessoas.map((pessoa) => (
+                            <PersonagemItem key={pessoa.name} data={pessoa} />
+                        ))}
+                    </ul>
+                
+                    <div className="mt-8">
+                        <Paginacao
+                            page={page}
+                            setPage={setPage}
+                            hasNext={!!dataInfo.next}
+                            hasPrev={!!dataInfo.previous}
+                        />
+                    </div>
+                </>
             )}
         </div>
     );
