@@ -29,7 +29,7 @@ Cada seção tem **paginação** para navegar pelos resultados, e os cards foram
 - **[Vite 7](https://vite.dev/)** — bundler ultra rápido para desenvolvimento
 - **[React Router DOM v7](https://reactrouter.com/)** — navegação entre as páginas
 - **[Tailwind CSS v4](https://tailwindcss.com/)** — estilização com classes utilitárias
-- **[SWAPI](https://swapi.dev/)** — a API de dados do universo Star Wars
+- **[SWAPI](https://swapi.info/)** — a API de dados do universo Star Wars
 
 ---
 
@@ -74,4 +74,4 @@ O projeto tem uma estética de **terminal cyberpunk** — fundo escuro (`slate-9
 
 ---
 
-*Dados fornecidos por [swapi.dev](https://swapi.dev) • Projeto sem fins comerciais*
+*Dados fornecidos por [swapi.dev](https://swapi.info/) • Projeto sem fins comerciais*
