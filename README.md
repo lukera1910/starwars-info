@@ -1,16 +1,77 @@
-# React + Vite
+# 🌌 Star Wars Archive Terminal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> *"A long time ago in a galaxy far, far away..."*
 
-Currently, two official plugins are available:
+Uma wiki interativa do universo Star Wars, construída com visual de terminal futurista e dados reais vindos da [SWAPI](https://swapi.dev) — a API pública mais completa sobre a saga.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ O que você vai encontrar aqui
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O projeto funciona como um **"banco de dados Jedi"**, onde você pode explorar:
 
-## Expanding the ESLint configuration
+| Categoria | O que tem |
+|---|---|
+| 🪐 **Planetas** | Dados sobre os mundos da galáxia (clima, terreno, população...) |
+| 🚀 **Naves** | Especificações técnicas das naves interestelares |
+| 🚘 **Veículos** | Transportes terrestres que aparecem nos filmes |
+| 👦🏻 **Pessoas** | Perfis dos personagens da saga |
+| 🎬 **Filmes** | Informações sobre cada episódio |
+| 👽 **Espécies** | Taxonomia das raças da galáxia |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Cada seção tem **paginação** para navegar pelos resultados, e os cards foram pensados para exibir as informações de forma clara e organizada.
+
+---
+
+## 🛠️ Tecnologias
+
+- **[React 19](https://react.dev/)** — componentes, hooks, tudo que a gente ama
+- **[Vite 7](https://vite.dev/)** — bundler ultra rápido para desenvolvimento
+- **[React Router DOM v7](https://reactrouter.com/)** — navegação entre as páginas
+- **[Tailwind CSS v4](https://tailwindcss.com/)** — estilização com classes utilitárias
+- **[SWAPI](https://swapi.dev/)** — a API de dados do universo Star Wars
+
+---
+
+## 🚀 Rodando localmente
+
+Você vai precisar do [Node.js](https://nodejs.org/) instalado na sua máquina.
+
+```bash
+# Clone o repositório
+git clone https://github.com/lukera1910/starwars-info.git
+
+# Entre na pasta
+cd starwars-info
+
+# Instale as dependências
+npm install
+
+# Suba o servidor de desenvolvimento
+npm run dev
+```
+
+Acesse [http://localhost:5173](http://localhost:5173) e que a Força esteja com você. 🤙
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── components/       # Componentes reutilizáveis (cards, tabelas, paginação)
+├── pages/            # Uma página para cada categoria da SWAPI
+├── utils/            # Funções auxiliares (ex: conversão de unidades)
+├── App.jsx           # Configuração das rotas
+└── main.jsx          # Ponto de entrada da aplicação
+```
+
+---
+
+## 🎨 Visual
+
+O projeto tem uma estética de **terminal cyberpunk** — fundo escuro (`slate-950`), texto em ciano, efeitos de glow nos hovers e tipografia monoespaçada. A ideia é parecer que você está acessando um sistema secreto da Ordem Jedi.
+
+---
+
+*Dados fornecidos por [swapi.dev](https://swapi.dev) • Projeto sem fins comerciais*
